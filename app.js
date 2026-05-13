@@ -23,9 +23,6 @@ const userRouter = require("./routes/user.js");
 const { error } = require('console');
 
 
-
-
-
 const dburl =process.env.ATLASDB_URL
 
 main()
@@ -70,9 +67,9 @@ const sessionOptions= {
     }
 };
 
-// app.get("/", (req,res) => {
-//     res.send("Hi I am  on root")
-// });
+app.get("/", (req,res) => {
+    res.redirect("/listings")
+});
 
 
 app.use(session(sessionOptions));
